@@ -20,7 +20,7 @@ Ejecución del Proyecto
 
 ## Ejecución del proyecto
 ```
-#1. Obtener el repositorio con Go
+#1. Obtener el repositorio con Go 
 go get github.com/udistrital/planeacion_mid
 
 #2. Moverse a la carpeta del repositorio
