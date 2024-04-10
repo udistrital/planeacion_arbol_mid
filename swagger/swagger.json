@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "title": "beego Test API",
-        "description": "beego has a very cool tools to autogenerate documents for your API\n",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
         "version": "1.0.0",
         "termsOfService": "http://beego.me/",
         "contact": {
@@ -15,18 +15,18 @@
     },
     "basePath": "/v1",
     "paths": {
-        "/arbol/activar_nodo/{id}": {
+        "/arbol/nodo/{id}/activar": {
             "put": {
                 "tags": [
                     "arbol"
                 ],
-                "description": "activa el nodo arbol\n\u003cbr\u003e",
+                "description": "Activa el nodo arbol",
                 "operationId": "ArbolController.ActivarNodo",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del nodo que quiere activar",
                         "required": true,
                         "type": "string"
                     }
@@ -41,44 +41,18 @@
                 }
             }
         },
-        "/arbol/activar_plan/{id}": {
-            "put": {
-                "tags": [
-                    "arbol"
-                ],
-                "description": "activar el plan arbol\n\u003cbr\u003e",
-                "operationId": "ArbolController.ActivarPlan",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to delete",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} delete success!"
-                    },
-                    "403": {
-                        "description": "id is empty"
-                    }
-                }
-            }
-        },
-        "/arbol/desactivar_nodo/{id}": {
+        "/arbol/nodo/{id}/desactivar": {
             "delete": {
                 "tags": [
                     "arbol"
                 ],
-                "description": "desactiva el nodo arbol\n\u003cbr\u003e",
+                "description": "Desactiva el nodo árbol",
                 "operationId": "ArbolController.DesactivarNodo",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del nodo que quiere desactivar",
                         "required": true,
                         "type": "string"
                     }
@@ -93,18 +67,44 @@
                 }
             }
         },
-        "/arbol/desactivar_plan/{id}": {
+        "/arbol/plan/{id}/activar": {
+            "put": {
+                "tags": [
+                    "arbol"
+                ],
+                "description": "Activa el plan árbol",
+                "operationId": "ArbolController.ActivarPlan",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del plan que quiere activar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/arbol/plan/{id}/desactivar": {
             "delete": {
                 "tags": [
                     "arbol"
                 ],
-                "description": "desactiva el plan arbol\n\u003cbr\u003e",
+                "description": "Desactiva el plan árbol",
                 "operationId": "ArbolController.DesactivarPlan",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del plan que quiere desactivar",
                         "required": true,
                         "type": "string"
                     }
@@ -124,13 +124,13 @@
                 "tags": [
                     "arbol"
                 ],
-                "description": "Consulta el arbol por id\n\u003cbr\u003e",
+                "description": "Consulta el árbol por id",
                 "operationId": "ArbolController.ConsultarArbol",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The key for staticblock",
+                        "description": "Id del árbol que quiere consultar",
                         "required": true,
                         "type": "string"
                     }

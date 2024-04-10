@@ -13,7 +13,9 @@ swagger/fonts/
 swagger/images/
 swagger/lang/
 swagger/lib/
-.env
+*.env
 planeacion_arbol_mid
 *.exe*
 .exe~
+go.mod
+go.sum

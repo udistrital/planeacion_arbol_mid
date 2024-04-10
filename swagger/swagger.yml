@@ -1,8 +1,7 @@
 swagger: "2.0"
 info:
   title: beego Test API
-  description: |
-    beego has a very cool tools to autogenerate documents for your API
+  description: beego has a very cool tools to autogenerate documents for your API
   version: 1.0.0
   termsOfService: http://beego.me/
   contact:
@@ -16,14 +15,12 @@ paths:
     get:
       tags:
       - arbol
-      description: |-
-        Consulta el arbol por id
-        <br>
+      description: Consulta el árbol por id
       operationId: ArbolController.ConsultarArbol
       parameters:
       - in: path
         name: id
-        description: The key for staticblock
+        description: Id del árbol que quiere consultar
         required: true
         type: string
       responses:
@@ -33,18 +30,16 @@ paths:
             $ref: '#/definitions/models.Arbol'
         "403":
           description: :id is empty
-  /arbol/activar_nodo/{id}:
+  /arbol/nodo/{id}/activar:
     put:
       tags:
       - arbol
-      description: |-
-        activa el nodo arbol
-        <br>
+      description: Activa el nodo arbol
       operationId: ArbolController.ActivarNodo
       parameters:
       - in: path
         name: id
-        description: The id you want to delete
+        description: Id del nodo que quiere activar
         required: true
         type: string
       responses:
@@ -52,37 +47,16 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
-  /arbol/activar_plan/{id}:
-    put:
-      tags:
-      - arbol
-      description: |-
-        activar el plan arbol
-        <br>
-      operationId: ArbolController.ActivarPlan
-      parameters:
-      - in: path
-        name: id
-        description: The id you want to delete
-        required: true
-        type: string
-      responses:
-        "200":
-          description: '{string} delete success!'
-        "403":
-          description: id is empty
-  /arbol/desactivar_nodo/{id}:
+  /arbol/nodo/{id}/desactivar:
     delete:
       tags:
       - arbol
-      description: |-
-        desactiva el nodo arbol
-        <br>
+      description: Desactiva el nodo árbol
       operationId: ArbolController.DesactivarNodo
       parameters:
       - in: path
         name: id
-        description: The id you want to delete
+        description: Id del nodo que quiere desactivar
         required: true
         type: string
       responses:
@@ -90,18 +64,33 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
-  /arbol/desactivar_plan/{id}:
+  /arbol/plan/{id}/activar:
+    put:
+      tags:
+      - arbol
+      description: Activa el plan árbol
+      operationId: ArbolController.ActivarPlan
+      parameters:
+      - in: path
+        name: id
+        description: Id del plan que quiere activar
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /arbol/plan/{id}/desactivar:
     delete:
       tags:
       - arbol
-      description: |-
-        desactiva el plan arbol
-        <br>
+      description: Desactiva el plan árbol
       operationId: ArbolController.DesactivarPlan
       parameters:
       - in: path
         name: id
-        description: The id you want to delete
+        description: Id del plan que quiere desactivar
         required: true
         type: string
       responses:
