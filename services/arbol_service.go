@@ -4,7 +4,6 @@ import (
 	"errors"
 
 	"github.com/astaxie/beego"
-	"github.com/udistrital/planeacion_arbol_mid/helpers"
 	"github.com/udistrital/planeacion_arbol_mid/models"
 	"github.com/udistrital/utils_oas/request"
 )
@@ -111,7 +110,7 @@ func ActivarPlan(id string) (map[string]interface{}, error) {
 	}
 
 	request.LimpiezaRespuestaRefactor(res, &plan)
-	if helpers.EsMapVacio(plan) {
+	if len(plan) == 0 {
 		return nil, errors.New("error del servicio ActivarPlan: La respuesta no contiene datos")
 	}
 
@@ -145,7 +144,7 @@ func DesactivarPlan(id string) (map[string]interface{}, error) {
 
 	if err := request.GetJson("http://"+beego.AppConfig.String("PlanesService")+"/plan/"+id, &res); err == nil {
 		request.LimpiezaRespuestaRefactor(res, &plan)
-		if helpers.EsMapVacio(plan) {
+		if len(plan) == 0 {
 			return nil, errors.New("error del servicio DesactivarPlan: La respuesta no contiene datos")
 		}
 		plan["activo"] = false
@@ -235,7 +234,7 @@ func DesactivarNodo(id string) (map[string]interface{}, error) {
 
 	if err := request.GetJson("http://"+beego.AppConfig.String("PlanesService")+"/subgrupo/"+id, &res); err == nil {
 		request.LimpiezaRespuestaRefactor(res, &subgrupo)
-		if helpers.EsMapVacio(subgrupo) {
+		if len(subgrupo) == 0 {
 			return nil, errors.New("error del servicio DesactivarNodo: La respuesta no contiene datos")
 		}
 		subgrupo["activo"] = false
@@ -263,7 +262,7 @@ func ActivarNodo(id string) (map[string]interface{}, error) {
 
 	if err := request.GetJson("http://"+beego.AppConfig.String("PlanesService")+"/subgrupo/"+id, &res); err == nil {
 		request.LimpiezaRespuestaRefactor(res, &subgrupo)
-		if helpers.EsMapVacio(subgrupo) {
+		if len(subgrupo) == 0 {
 			return nil, errors.New("error del servicio ActivarNodo: La respuesta no contiene datos")
 		}
 		subgrupo["activo"] = true
