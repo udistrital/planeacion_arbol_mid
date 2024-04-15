@@ -22,9 +22,11 @@ Api Mid para el sistema de planeación Universidad Distrital.
 
 ## Ejecución del proyecto
 ```
+
 #1. Obtener el repositorio con Go
 
 go get github.com/udistrital/planeacion_arbol_mid
+
 
 #2. Moverse a la carpeta del repositorio
 cd $GOPATH/src/github.com/udistrital/planeacion_arbol_mid
@@ -57,4 +59,3 @@ planeacion_arbol_mid is free software: you can redistribute it and/or modify it 
 planeacion_mid is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with planeacion_mid. If not, see https://www.gnu.org/licenses/.
-
