@@ -1,6 +1,5 @@
 # planeacion_arbol_mid
 Api Mid para el sistema de planeación Universidad Distrital.
-
 ## Especificaciones Técnicas
 
 ### Tecnologías Implementadas y Versiones
@@ -12,7 +11,6 @@ Api Mid para el sistema de planeación Universidad Distrital.
 
 ## Variables de Entorno
 ```
-
   PLANEACION_ARBOL_MID_HTTP_PORT: [Puerto de ejecución API]
   PLANES_SERVICE: [Servicio Api planes:crud]
 ```
@@ -24,33 +22,43 @@ Api Mid para el sistema de planeación Universidad Distrital.
 ```
 
 #1. Obtener el repositorio con Go
-
 go get github.com/udistrital/planeacion_arbol_mid
 
 
 #2. Moverse a la carpeta del repositorio
 cd $GOPATH/src/github.com/udistrital/planeacion_arbol_mid
 
-
 # 3. Moverse a la rama **develop**
 git pull origin develop && git checkout develop
 
 # 4. alimentar todas las variables de entorno que utiliza el proyecto.
-
 PLANEACION_ARBOL_MID_HTTP_PORT=8080 PLANEACION_ARBOL_MID_SOME_VARIABLE=some_value bee run
-
 ```
 
 
 ## Ejecución Pruebas
 
-Pruebas unitarias
-```
-# En Proceso
-```
+### Pruebas Unitarias
+
+#### ArbolController
+
+- **TestConsultarArbol:** <span style="color: #4cc61e;"><b>Test OK</b></span>
+![TestConsultarArbol](test/Unit%20Test/TestConsultarArbol.png)
+
+- **TestDesactivarPlan:** <span style="color: #4cc61e;"><b>Test OK</b></span>
+![TestDesactivarPlan](test/Unit%20Test/TestDesactivarPlan.png)
+
+- **TestDesactivarNodo:** <span style="color: #4cc61e;"><b>Test OK</b></span>
+![TestDesactivarNodo](test/Unit%20Test/TestDesactivarNodo.png)
+
+- **TestActivarPlan:** <span style="color: #4cc61e;"><b>Test OK</b></span>
+![TestActivarPlan](test/Unit%20Test/TestActivarPlan.png)
+
+- **TestActivarNodo:** <span style="color: #4cc61e;"><b>Test OK</b></span>
+![TestActivarNodo](test/Unit%20Test/TestActivarNodo.png)
+
 
 ## Licencia
-
 
 This file is part of planeacion_arbol_mid.
 
