@@ -19,16 +19,7 @@ func init() {
     beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"] = append(beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"],
         beego.ControllerComments{
             Method: "ActivarNodo",
-            Router: "/activar_nodo/:id",
-            AllowHTTPMethods: []string{"put"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"] = append(beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"],
-        beego.ControllerComments{
-            Method: "ActivarPlan",
-            Router: "/activar_plan/:id",
+            Router: "/nodo/:id/activar",
             AllowHTTPMethods: []string{"put"},
             MethodParams: param.Make(),
             Filters: nil,
@@ -37,7 +28,7 @@ func init() {
     beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"] = append(beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"],
         beego.ControllerComments{
             Method: "DesactivarNodo",
-            Router: "/desactivar_nodo/:id",
+            Router: "/nodo/:id/desactivar",
             AllowHTTPMethods: []string{"delete"},
             MethodParams: param.Make(),
             Filters: nil,
@@ -45,8 +36,17 @@ func init() {
 
     beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"] = append(beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"],
         beego.ControllerComments{
+            Method: "ActivarPlan",
+            Router: "/plan/:id/activar",
+            AllowHTTPMethods: []string{"put"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"] = append(beego.GlobalControllerRouter["github.com/udistrital/planeacion_arbol_mid/controllers:ArbolController"],
+        beego.ControllerComments{
             Method: "DesactivarPlan",
-            Router: "/desactivar_plan/:id",
+            Router: "/plan/:id/desactivar",
             AllowHTTPMethods: []string{"delete"},
             MethodParams: param.Make(),
             Filters: nil,
